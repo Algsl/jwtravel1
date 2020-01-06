@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/more/more",
+    "pages/index/detail/detail",
+    "pages/scart/scart",
+    "pages/scart/calculate/calculate",
+    "pages/user/user",
+    "pages/user/about/about",
+    "pages/user/card/card",
+    "pages/user/collect/collect",
+    "pages/user/help/help",
+    "pages/user/order/order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "精卫旅游",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "去旅游",
+        "iconPath": "images/travel_off.png",
+        "selectedIconPath": "images/travel_on.png"
+      },
+      {
+        "pagePath": "pages/scart/scart",
+        "text": "购物车",
+        "iconPath": "images/scart_off.png",
+        "selectedIconPath": "images/scart_on.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/me_off.png",
+        "selectedIconPath": "images/me_on.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

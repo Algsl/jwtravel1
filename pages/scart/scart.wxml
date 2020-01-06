@@ -1,0 +1,27 @@
+<view class='main'>
+  <scroll-view scroll-y style='width:100%;height:100%;position:fixed;'>
+    <checkbox-group bindchange="checkbox">
+      <label wx:for="{{scart}}" wx:key="item"  class='item'>
+        <checkbox value='{{item.id}}' checked='{{cchoose}}' class='item_checkbox'></checkbox>
+        <image class='item_img' src='{{item.img}}'></image>
+        <view class='item_info'>
+          <view class='item_info_title'>{{item.title}}</view>
+          <view class='item_info_tquan'>时间段：4小时</view>
+          <view class='item_info_view'>
+            <view class='item_info_quantity'>x {{item.quantity}}</view>
+            <view class='item_info_price'>￥ {{item.price}}</view>
+          </view>
+        </view>
+      </label>
+    </checkbox-group>
+    <view style="width:100%;height:120rpx;"></view>
+  </scroll-view>
+  <view class='sc_bottom'>
+    <checkbox class='sc_bottom_radio' bindtap='all' checked='{{cchoose}}'>全选</checkbox>
+    <view class='sc_bottom_sum'>总计：￥{{sum}}</view>
+    <button wx:if="{{!isDelete}}" class='sc_bottom_edit' style="width: 160rpx;height:10rpx;" bindtap='edit'>编辑</button>
+    <button wx:else class='sc_bottom_edit' bindtap='edit'  style="width: 160rpx;height:30rpx;">完成</button>
+    <button wx:if="{{!isDelete}}" disabled="{{sum==0}}"  style="width: 160rpx;height:30rpx;"  class='sc_bottom_compute' bindtap='compute'>结算</button>
+    <button wx:else class='sc_bottom_compute' bindtap='delete'  style="width: 160rpx;height:30rpx;">删除</button>
+  </view>
+</view>

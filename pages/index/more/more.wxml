@@ -1,0 +1,32 @@
+<view class="main">
+  <!--设置不同的筛选方式-->
+  <view class='top'>
+    <view class="top_item {{sindex==0?'on':''}}" id='0' bindtap='switch'>综合排序</view>
+    <view class="top_item {{sindex==1?'on':''}}" id='1' bindtap='switch'>最新</view>
+    <view class="top_item {{sindex==2?'on':''}}" id='2' bindtap='switch'>价格</view>
+    <view class="top_item {{sindex==3?'on':''}}" id='3' bindtap='switch'>销量</view>
+  </view>
+  <!--垂直滚动-->
+  <scroll-view scroll-y style='width:100%;height:100%;margin-top:10rpx;position:fixed;'>
+    <!--循环输出旅游景区信息-->
+    <view class='travel' wx:for="{{lists.length/2}}" wx:key="item">
+      <navigator class='travel_item' url='../detail/detail?id={{lists[item*2].id}}'>
+        <image class='travel_item_img' src='{{lists[item*2].img}}'></image>
+        <view class='travel_item_title'>{{lists[item*2].title}}</view>
+        <view class='travel_item_bottom'>
+          <view class='travel_item_price'>￥{{lists[item*2].price}}</view>
+          <view class='travel_item_selld'>已售{{lists[item*2].selled}}件</view>
+        </view>
+      </navigator>
+      <navigator class='travel_item' url='../detail/detail?id={{lists[item*2+1].id}}'>
+        <image class='travel_item_img' src='{{lists[item*2+1].img}}'></image>
+        <view class='travel_item_title'>{{lists[item*2+1].title}}</view>
+        <view class='travel_item_bottom'>
+          <view class='travel_item_price'>￥{{lists[item*2+1].price}}</view>
+          <view class='travel_item_selld'>已售{{lists[item*2+1].selled}}件</view>
+        </view>
+      </navigator>
+    </view>
+    <view style="width:100%;height:120rpx;"></view>
+  </scroll-view>
+</view>

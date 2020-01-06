@@ -1,0 +1,8 @@
+<view class="main">
+  <view class='top'>
+    <view class="top_bar {{current==0?'on':''}}" id="0" bindtap='switchNav'>未使用</view>
+    <view class="top_bar {{current==1?'on':''}}" id="1" bindtap='switchNav'>已失效</view>
+  </view>
+  <view wx:if="{{current==0}}" class="hint">暂无可用卡券</view>
+  <view wx:else class="hint">暂无失效卡券</view>
+</view>

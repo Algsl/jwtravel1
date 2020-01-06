@@ -1,0 +1,55 @@
+<view class="main">
+  <view wx:if="{{!hasAddress}}" class='content1' bindtap='chooseAdd'>
+    <view class='content1_title'>请选择收货地址</view>
+    <image class='content1_img' src='../../../images/more.png'></image>
+  </view>
+  <view wx:else class='contentU'>
+    <view class='contentU_name'>{{address.userName}}</view>
+    <view style='display:flex;flex-direction:column;'>
+      <view class='contentU_item1'>
+        <view class='contentU_item1_phone'>{{address.telNumber}}</view>
+        <view class='contentU_item1_postal'>{{address.postalCode}}</view>
+      </view>
+      <view class='contentU_item2'>
+        <view class='contentU_item2_province'>{{address.provinceName}}</view>
+        <view class='contentU_item2_city'>{{address.cityName}}</view>
+        <view class='contentU_item2_county'>{{address.countyName}}</view>
+      </view>
+      <view class='contentU_item3'>
+        <view  class='contentU_item3_detail'>{{address.detailInfo}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='content2'>
+    <view class='content2_title'>优惠券</view>
+    <view class='content2_txt'>目前无可用优惠券</view>
+    <image class='content2_img' src='../../../images/more.png'></image>
+  </view>
+  <scroll-view scroll-y style='height:300rpx;'> 
+    <view wx:for="{{travel}}" wx:key="item" class='content3'>
+      <image class='content3_img' src='{{item.img}}'></image>
+      <view class='content3_right'>
+        <view class='content3_right_title'>{{item.title}}</view>
+        <view class='content3_right_quality'>x {{item.quantity}}</view>
+        <view class='content3_right_price'>￥ {{item.price}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:if="{{!hasAddress}}" class='content2'>
+    <view class='content2_title'>运费</view>
+    <view class='content2_txt'>请先选择收货地址</view>
+  </view>
+  <view wx:else class='content2'>
+    <view class='content2_title'>运费</view>
+    <view class='content2_price'>￥ 0.00</view>
+  </view>
+  <view class='content4'>
+    <view class='content4_title'>买家留言</view>
+    <textarea class='content4_txtarea' placeholder='请填写备注'></textarea>
+  </view>
+  <view class='bottom'>
+    <view wx:if='{{!hasAddress}}'  class='bottom_sum'>总计: ￥0.00</view>
+    <view wx:else  class='bottom_sum'>总计: ￥{{sum}}</view>
+    <view class='bottom_btn' bindtap='pay'>去支付</view>
+  </view>
+</view>

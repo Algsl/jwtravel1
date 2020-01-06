@@ -1,0 +1,73 @@
+<view class='main' style='height:{{sHeight}}px'>
+  <!--轮播图-->
+  <swiper interval='3000' duration='1000'>
+    <block wx:for="{{images}}" wx:key="item">
+      <swiper-item>
+        <image class='swiper' src='{{item}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--导航图片及文字-->
+  <view class='content1'>
+    <navigator class='content1_item' url='../index/more/more?id=0'>
+      <image class="content1_item_img" src="{{content1[0].img}}"></image>
+      <view class='content1_item_txt'>{{content1[0].txt}}</view>
+    </navigator> 
+    <navigator class='content1_item' url='../user/help/help'>
+      <image class="content1_item_img" src="{{content1[1].img}}"></image>
+      <view class='content1_item_txt'>{{content1[1].txt}}</view>
+    </navigator> 
+    <navigator class='content1_item' url='../user/about/about'>
+      <image class="content1_item_img" src="{{content1[2].img}}"></image>
+      <view class='content1_item_txt'>{{content1[2].txt}}</view>
+    </navigator>
+  </view>
+  <!--自驾游布局-->
+  <view class='content2'>
+    <view class='content2_top'>
+      <view class='content2_top_center'>自驾游</view>
+      <navigator class='content2_top_rnav' url='../index/more/more?id=0'>
+        <view  class='content2_top_rtxt'>更多</view>
+        <image class='content2_top_rimg' src='../../images/more.png'></image>
+      </navigator>
+    </view>
+    <swiper autoplay='true' interval='3000' duration='1000'  class='content2_bottom' style='margin-top:24rpx;'>
+      <block wx:for="{{content2.length/2}}" wx:key="item"   class='content2_bottom'>
+        <swiper-item  class='content2_bottom'> 
+        <view class='content2_bottom_left' >
+          <navigator url='../index/detail/detail?id={{content2[item*2].id}}'>
+            <image class='content2_bottom_img' src='{{content2[item*2].img}}'></image>
+          </navigator>
+          <view class='content2_bottom_txt'>{{content2[item*2].title}}</view>
+        </view>
+        <view class='content2_bottom_right'>
+          <navigator url='../index/detail/detail?id={{content2[item*2+1].id}}'>
+            <image class='content2_bottom_img' src='{{content2[item*2+1].img}}'></image>
+          </navigator>
+          <view class='content2_bottom_txt'>{{content2[item*2+1].title}}</view>
+        </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--周边游布局-->
+  <view class='content3'>
+    <view class='content2_top'>
+      <view class='content2_top_center'>周边游</view>
+      <navigator class='content2_top_rnav' url='../index/more/more?id=1'>
+        <view  class='content2_top_rtxt'>更多</view>
+        <image class='content2_top_rimg' src='../../images/more.png'></image>
+      </navigator>
+    </view>
+    <view class='content3_bottom'>
+      <view wx:for="{{content3.length/3}}" wx:key="item" wx:for-index="row" class='content3_bottom_row'>
+        <view wx:for="{{3}}" wx:key="item" wx:for-index="column"  class='content3_bottom_row_item'>
+          <navigator  class='content3_bottom_row_item_img' url='../index/detail/detail?id={{content3[row*3+column].id}}'>
+            <image class='content3_bottom_row_item_img' src='{{content3[row*3+column].img}}'></image>
+          </navigator>
+          <view class='content3_bottom_row_item_txt'>{{content3[row*3+column].title}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

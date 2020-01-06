@@ -1,0 +1,20 @@
+<view class="main">
+  <view class='top'>
+    <view class="top_bar {{current==0?'on':''}}" id="0" bindtap='switchNav'>待付款</view>
+    <view class="top_bar {{current==1?'on':''}}" id="1" bindtap='switchNav'>待发货</view>
+    <view class="top_bar {{current==2?'on':''}}" id="2" bindtap='switchNav'>已发货</view>
+    <view class="top_bar {{current==3?'on':''}}" id="3" bindtap='switchNav'>待评价</view>
+    <view class="top_bar {{current==4?'on':''}}" id="4" bindtap='switchNav'>售后</view>
+  </view>
+  <scroll-view scroll-y style='width:100%;height:100%;margin-top:20rpx;position:fixed;'>
+    <view wx:for="{{travel}}" wx:key="item" class='content3'>
+      <image class='content3_img' src='{{item.img}}'></image>
+      <view class='content3_right'>
+        <view class='content3_right_title'>{{item.title}}</view>
+        <view class='content3_right_quality'>x {{item.quantity}}</view>
+        <view class='content3_right_price'>￥ {{item.price}}</view>
+      </view>
+    </view>
+    <view style="width:100%;height:20rpx;"></view>
+  </scroll-view>
+</view>

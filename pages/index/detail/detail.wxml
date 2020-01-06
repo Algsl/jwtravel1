@@ -1,0 +1,74 @@
+<view class='main'>
+  <!--滚动布局-->
+  <scroll-view scroll-y style='height:100%;position:fixed;'>
+    <!--旅游景区宣传图片-->
+    <image class='swiper' src='{{travelDetail.img}}'></image>
+    <!--<swiper autoplay='true' class='swiper'>
+      <view wx:for="{{3}}" wx:key="item">
+        <swiper-item class="swiper">
+        </swiper-item>
+      </view>
+    </swiper>-->
+    <!--旅游景区的详细信息-->
+    <view class='content1'>
+      <view class='content1_left'>
+        <view class='content1_top'>
+          <view class='content1_top_left'>{{travelDetail.title}}</view>
+        </view>
+        <view class='content1_bottom'>
+          <view class='content1_bottom_item1'>￥{{travelDetail.price}}</view>
+          <view class='content1_bottom_item2'>￥{{travelDetail.old_price}}</view>
+          <view class='content1_bottom_item3'>已售{{travelDetail.selled}}件</view>
+        </view>
+      </view>
+      <view class='content1_right'>
+        <button class='content1_right_btn' open-type='share'>
+          <image class='content1_right_img'  src='../../../images/share.png'></image>
+        </button>
+        <view class='content1_right_txt'>分享</view>
+      </view>
+    </view>
+    <!--旅游景区的规格-->
+    <view class='content2'>
+      <view class='content2_item1'>选择</view>
+      <view class='content2_item2'>规格</view>
+      <image class='content2_item3' src='../../../images/more.png'></image>
+    </view>
+    
+    <!--旅游景区的详情和评价-->
+    <view class='content3'>
+      <view class="content3_tab {{current==0?'on':''}}" data-current='0' bindtap='switchN'>商品详情</view>
+      <view class="content3_tab {{current==1?'on':''}}" data-current='1' bindtap='switchN'>评价</view>
+    </view>
+    <view  class='content3_img' wx:if="{{current==0}}">
+      <view  class='content3_img' wx:for="{{imgs}}" wx:key="item">
+        <image class='content3_img' src='{{item.img}}'></image>
+      </view>
+    </view>
+    <view class='content3_bar' wx:else>
+      <view class="content3_bari {{bar==0?'y':''}}" data-current='0' bindtap='switchB'>全部(0)</view>
+      <view class="content3_bari {{bar==1?'y':''}}" data-current='1' bindtap='switchB'>好评(0)</view>
+      <view class="content3_bari {{bar==2?'y':''}}" data-current='2' bindtap='switchB'>中评(0)</view>
+      <view class="content3_bari {{bar==3?'y':''}}" data-current='3' bindtap='switchB'>差评(0)</view>
+    </view>
+  </scroll-view>
+
+  <!--底部导航栏：首页、收藏、加入购物车、立即购买-->
+  <view class='bottom'>
+    <view class='bottom_item' bindtap='back'>
+      <image class='bottom_item_img' src='../../../images/home.png'></image>
+      <view class='bottom_item_txt'>首页</view>
+    </view>
+    <view wx:if="{{!iscollect}}" class='bottom_item' bindtap='collect'>
+      <image class='bottom_item_img' src='../../../images/heart.png'></image>
+      <view class='bottom_item_txt'>收藏</view>
+    </view>
+    <view wx:else class='bottom_item' bindtap='collect'>
+      <image class='bottom_item_img' src='../../../images/sheart.png'></image>
+      <view class='bottom_item_txt'>已收藏</view>
+    </view>
+    <view class='bottom_btn1' bindtap='addCar'>加入购物车</view>
+    <view class='bottom_btn2' bindtap='buy'>立即购买</view>
+  </view>
+</view>
+

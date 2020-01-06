@@ -1,0 +1,37 @@
+<view class='main'>
+  <view class='content1'>
+    <image class='content1_left' src='https://jwtravel.gesilaa6.club/travel/logo1.jpg'></image>
+    <view class='content1_right'>精卫旅游欢迎您</view>
+  </view>
+  <view class='content2'>
+    <view class='content2_top'>
+      <view class='content2_top_left'>欢迎入住“精卫”之家</view>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+      <image class='content2_top_right' src='../../../images/love.png'></image>
+    </view>
+    <view class='content2_bottom'>
+      拥抱青山绿水走进健康天地
+    </view>
+  </view>
+  <view class='content3'>
+    <view class='content3_top'>我们承诺：</view>
+    <view class='content3_bottom'>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/insist.png'></image>
+        <view class='content3_bottom_item_right'>绝对安全</view>
+      </view>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/insist.png'></image>
+        <view class='content3_bottom_item_right'>绝对可靠</view>
+      </view>
+      <view class='content3_bottom_item'>
+        <image class='content3_bottom_item_left' src='../../../images/insist.png'></image>
+        <view class='content3_bottom_item_right'>绝对划算</view>
+      </view>
+    </view>
+  </view>
+  <view class='content4'>
+    <view class='content4_item'>读万卷书，行万里路，揽世界名胜，知行合一</view>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+<view class='main'>
+  <view wx:if="{{userInfo.nickName==null}}">
+    <button animation="{{animationData}}" class='impower' open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text decode='true'>请&emsp;授&emsp;权</text></button>
+  </view>
+  <view wx:else>
+    <view class='content1'>
+      <image class='content1_headimg' src='{{userInfo.avatarUrl}}'></image>
+      <view class='content1_right'>
+        <view class='content1_right_nname'>{{userInfo.nickName}}</view>
+        <view class='content1_right_intro'>欢迎使用精卫旅游小程序</view>
+      </view>
+    </view>
+    <view class='content2'>
+      <view class='content2_item'>
+        <image class='content2_item_img' src='../../images/score.png'></image>
+        <view class='content2_item_title'>积分</view>
+        <view class='content2_item_cont'>100</view>
+      </view>
+      <view class='line_column'></view>
+      <view class='content2_item'>
+        <image class='content2_item_img' src='../../images/money.png'></image>
+        <view class='content2_item_title'>余额</view>
+        <view class='content2_item_cont'>0</view>
+      </view>
+    </view>
+    <view class='content3'>
+      <view class='content3_title'>我的订单</view>
+      <view class='line_row'></view>
+      <view class='content3_order'>
+        <navigator url='../user/order/order?id=0' class='content3_order_item'>
+          <image class='content3_order_item_img' src='../../images/pay.png'></image>
+          <view class='content3_order_item_txt'>待付款</view>
+        </navigator>
+        <navigator url='../user/order/order?id=1' class='content3_order_item'>
+          <image class='content3_order_item_img' src='../../images/send.png'></image>
+          <view class='content3_order_item_txt'>待发货</view>
+        </navigator>
+        <navigator url='../user/order/order?id=2' class='content3_order_item'>
+          <image class='content3_order_item_img' src='../../images/sended.png'></image>
+          <view class='content3_order_item_txt'>已发货</view>
+        </navigator>
+        <navigator url='../user/order/order?id=3' class='content3_order_item'>
+          <image class='content3_order_item_img' src='../../images/price.png'></image>
+          <view class='content3_order_item_txt'>待评价</view>
+        </navigator>
+        <navigator url='../user/order/order?id=4' class='content3_order_item'>
+          <image class='content3_order_item_img' src='../../images/pay_back.png'></image>
+          <view class='content3_order_item_txt'>售后</view>
+        </navigator>
+      </view>
+    </view>
+    <view class='content4'>
+      <view class='content4_item'>
+        <navigator url='../user/collect/collect' class='content4_item_view'>
+          <image class='content4_item_img' src='../../images/collect.png'></image>
+          <view class='content4_item_txt'>我的收藏</view>
+        </navigator>
+        <view class='line_column1'></view>
+        <navigator url='../user/card/card' class='content4_item_view'>
+          <image class='content4_item_img' src='../../images/charge.png'></image>
+          <view class='content4_item_txt'>我的卡券</view>
+        </navigator>
+      </view>
+      <view class='line_row'></view>
+      <view class='content4_item'>
+        <navigator url='../user/help/help' class='content4_item_view'>
+          <image class='content4_item_img' src='../../images/group.png'></image>
+          <view class='content4_item_txt'>求助反馈</view>
+        </navigator>
+        <view class='line_column2'></view>
+        <navigator url='../user/about/about' class='content4_item_view'>
+          <image class='content4_item_img' src='../../images/service.png'></image>
+          <view class='content4_item_txt'>关于我们</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
